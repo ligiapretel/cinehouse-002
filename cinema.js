@@ -11,3 +11,15 @@ function listarTodosOsFilmes(filmes) {
   }
 }
 listarTodosOsFilmes(catalogoObj.data);
+
+function listarFilmesEmCartaz(filmes){
+  const filmesEmCartaz = filmes.filter((filme)=>{
+    //Se o filme tiver a propriedade em cartaz true, retorne true
+    if(filme.emCartaz){
+      return true
+    }
+  })
+  return filmesEmCartaz
+}
+
+console.log(listarFilmesEmCartaz(catalogoObj.data))
