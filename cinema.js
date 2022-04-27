@@ -37,3 +37,27 @@ function listarFilmesEmCartaz(filmes) {
 
 
 console.log(listarFilmesEmCartaz(catalogoObj.data))
+
+// function alterarStatusEmCartaz(id,filmes){
+//   const indexFilme = filmes.findIndex(filme=>filme.codigo===id)
+//   if(indexFilme>=0){
+//     filmes[indexFilme].emCartaz = !filmes[indexFilme].emCartaz
+//   }
+// }
+
+function alterarStatusEmCartaz(id,filmes){
+  const indexFilme = filmes.findIndex((filme)=>{
+    if(filme.codigo===id){
+      return true
+    }
+  })
+  if(indexFilme>=0){
+    filmes[indexFilme].emCartaz = !filmes[indexFilme].emCartaz
+    return true
+  }else{
+    return false
+  }
+}
+
+console.log(alterarStatusEmCartaz(1,catalogoObj.data))
+console.log(catalogoObj.data)
